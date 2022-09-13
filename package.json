@@ -1,0 +1,23 @@
+{
+  "name": "the-bicycle-shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riyadsalem/The-Bicycle-Shop-Build-a-Web-Server-with-Pure-Node-JS-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/riyadsalem/The-Bicycle-Shop-Build-a-Web-Server-with-Pure-Node-JS-/issues"
+  },
+  "homepage": "https://github.com/riyadsalem/The-Bicycle-Shop-Build-a-Web-Server-with-Pure-Node-JS-#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
