@@ -69,16 +69,28 @@ server.listen(3000);
 function resplaceTemplate(html, bicycle) {
   html = html.replace(/<%IMAGE%>/g, bicycle.image);
   html = html.replace(/<%NAME%>/g, bicycle.name);
+  html = html.replace(/<%ID%>/g, bicycle.id);
 
   let price = bicycle.originalPrice;
   if (bicycle.hasDiscount) {
     price = (price * (100 - bicycle.discount)) / 100;
     html = html.replace(/<%NEWPRICE%>/g, `$${price}.00`);
-  } else if (!bicycle.hasDiscount) {
+    html = html.replace(
+      /<%DISCOUNTRATE%>/g,
+      `<div class="discount__rate"><p>${bicycle.discount}% Off</p></div>
+    `
+    );
+    html = html.replace(/<%OLDPRICE%>/g, `${bicycle.originalPrice}.00`);
+  } else {
     html = html.replace(/<%NEWPRICE%>/g, `${price}.00`);
+    html = html.replace(/<%DISCOUNTRATE%>/g, ``);
+    html = html.replace(/<%OLDPRICE%>/g, ``);
   }
 
-  html = html.replace(/<%OLDPRICE%>/g, `${bicycle.originalPrice}.00`);
+  for (let index = 1; index <= bicycle.star; index++) {
+    html = html.replace(/<%START%>/, "checked");
+  }
+  html = html.replace(/<%START%>/g, "");
 
   return html;
 }
