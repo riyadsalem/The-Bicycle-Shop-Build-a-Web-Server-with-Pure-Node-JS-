@@ -2,10 +2,18 @@
 const express = require("express");
 const app = express(); // output => Cannot GET /
 
+// create application/x-www-form-urlencoded parser
 app.use(express.urlencoded({ extended: false }));
+
+// create application/json parser
 app.use(express.json());
 
-app.get("/", (req, res) => {
+app.use((req, res, next) => {
+  console.log("HI I AM FROM MIDDLEWARE!!");
+  next();
+});
+
+app.get("/", (req, res, next) => {
   res.send("<h1> YAA </h1>");
 });
 
