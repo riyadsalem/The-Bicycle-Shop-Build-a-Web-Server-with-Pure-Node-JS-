@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index.js",
+    "server": "nodemon pureNodeJs.js",
     "server2": "nodemon express.js"
   },
   "repository": {
