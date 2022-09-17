@@ -9,7 +9,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use((req, res, next) => {
-  console.log("HI I AM FROM MIDDLEWARE!!");
+  console.log(req.method);
+  console.log(req.protocol);
+  console.log(req.get("host"));
+  console.log(req.originalUrl);
   next();
 });
 
@@ -23,7 +26,7 @@ app.get("/about", (req, res) => {
   });
 });
 
-app.post("/login", (req, res) => {
+app.post("/login", (req, res, next) => {
   console.log(req.body.email, " && ", req.body.password);
   res.send("User Login Successfuly");
 });
