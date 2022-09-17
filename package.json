@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon pureNodeJs.js",
-    "server2": "nodemon express.js"
+    "server1": "nodemon pureNodeJs.js",
+    "server2": "nodemon expressTest.js",
+    "server3": "nodemon index.js"
   },
   "repository": {
     "type": "git",
