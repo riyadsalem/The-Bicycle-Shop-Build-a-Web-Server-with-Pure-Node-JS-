@@ -6,12 +6,10 @@ app.listen(3000, (req, res) => {
   console.log("SERVER is running at port 3000");
 });
 
-/*
 app.use((req, res, next) => {
   console.log(req.get("host"));
   next();
 });
-*/
 
 app.set("view engine", "ejs");
 
