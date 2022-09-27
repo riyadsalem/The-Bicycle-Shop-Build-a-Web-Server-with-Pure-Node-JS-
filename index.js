@@ -19,7 +19,9 @@ app.use(express.static("public"));
 
 app.get("/", (req, res, next) => {
   // return res.send("HOMEPAGE");
-  return res.render("bicycles");
+  return res.render("bicycles", {
+    bicycles,
+  });
 });
 
 app.get("/bicycle", (req, res) => {

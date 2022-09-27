@@ -19,13 +19,14 @@
       </nav>
 
       <div class="bicycleShop">
+        <% for(let bicycle of bicycles) {%>
         <div class="bicycle">
           <div class="bicycle__image">
-            <img src="/image/0.png" alt="Hercules Roadeo A50" />
+            <img src="/image/<%= bicycle.image %>" alt="<%= bicycle.name %>" />
           </div>
 
           <div class="bicycle__name">
-            <a href="/bicycle?id=0">Hercules Roadeo A50</a>
+            <a href="/bicycle?id=<%= bicycle.id %>"><%= bicycle.name %></a>
           </div>
 
           <div class="bicycle__rating">
@@ -41,8 +42,12 @@
             <p class="old_price">$4000</p>
           </div>
 
-          <div class="discount__rate"><p>40% Off</p></div>
+          <% if(bicycle.hasDiscount) { %>
+          <div class="discount__rate"><p><%= bicycle.discount %>% Off</p></div>
+          <%}%>
         </div>
+
+        <% } %>
       </div>
     </div>
   </body>
