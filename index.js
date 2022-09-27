@@ -23,7 +23,8 @@ app.get("/", (req, res, next) => {
 });
 
 app.get("/bicycle", (req, res) => {
-  const id = req.query.id;
-  const bicycle = bicycles.find((b) => b.id === id);
-  return res.render("overview");
+  const bicycle = bicycles.find((b) => b.id === req.query.id);
+  return res.render("overview", {
+    bicycle,
+  });
 });
