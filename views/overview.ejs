@@ -27,7 +27,11 @@
           </div>
 
           <div class="singleBicycle_price">
-            <p>$1020.00</p>
+            <p>
+              <% if(bicycle.hasDiscount) { %> $<%= bicycle.originalPrice * (100
+              - bicycle.discount) / 100 %> <% }else{ %> $<%=
+              bicycle.originalPrice %> <% } %>
+            </p>
           </div>
 
           <div class="singleBicycle_desc">
