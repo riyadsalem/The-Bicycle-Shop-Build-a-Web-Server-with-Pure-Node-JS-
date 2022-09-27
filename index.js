@@ -8,6 +8,15 @@ app.listen(3000, (req, res) => {
 
 app.set("view engine", "ejs"); // support
 
+/*
+app.use((req, res, next) => {
+  console.log("YAA");
+  next();
+});
+*/
+
+app.use(express.static("public"));
+
 app.get("/", (req, res, next) => {
   // return res.send("HOMEPAGE");
   return res.render("bicycles");
